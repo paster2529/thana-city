@@ -1,0 +1,104 @@
+{
+	"folders": {},
+	"connections": {
+		"mysql8-1a1858768b5-1816eca5c4f422d2": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "thana_city",
+			"save-password": true,
+			"virtual-model-id": "mysql8-1a185821750-6a9ca9d6d56070c4",
+			"configuration": {
+				"host": "db-mysql-thana-city-ro.hook-app.com",
+				"port": "3306",
+				"database": "thana_city",
+				"url": "jdbc:mysql://db-mysql-thana-city-ro.hook-app.com:3306/thana_city",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": false,
+				"provider-properties": {
+					"@dbeaver-show-all-dbs@": "true"
+				},
+				"auth-model": "native"
+			}
+		},
+		"postgres-redshift-jdbc-1a1858768f1-12e71bf02a315b66": {
+			"provider": "postgresql",
+			"driver": "postgres-redshift-jdbc",
+			"name": "thana_city_datamart",
+			"save-password": true,
+			"virtual-model-id": "postgres-redshift-jdbc-1a185820c48-30dce0cfbe6947b3",
+			"configuration": {
+				"host": "thana-datamart-redshift-cluster-prod.cgqhw7byrmdr.ap-southeast-7.redshift.amazonaws.com",
+				"port": "5439",
+				"database": "thana_city_datamart",
+				"url": "jdbc:redshift://thana-datamart-redshift-cluster-prod.cgqhw7byrmdr.ap-southeast-7.redshift.amazonaws.com:5439/thana_city_datamart",
+				"configurationType": "MANUAL",
+				"home": "postgresql-x64-18",
+				"type": "dev",
+				"closeIdleConnection": false,
+				"provider-properties": {
+					"@dbeaver-show-non-default-db@": "true",
+					"@dbeaver-chosen-role@": "",
+					"@dbeaver-show-template-db@": "false",
+					"@dbeaver-show-unavailable-db@": "true",
+					"show-database-statistics": "false",
+					"@dbeaver-read-all-data-types-db@": "false",
+					"read-keys-with-columns": "false",
+					"replace-legacy-timezone": "false",
+					"postgresql.dd.plain.string": "false",
+					"postgresql.dd.tag.string": "false"
+				},
+				"auth-model": "native"
+			}
+		},
+		"postgres-redshift-jdbc-1a185876940-756de40fa4bbf91a": {
+			"provider": "postgresql",
+			"driver": "postgres-redshift-jdbc",
+			"name": "thana_city_datamart_nonprod",
+			"save-password": true,
+			"virtual-model-id": "postgres-redshift-jdbc-1a185821eeb-65ef0a400c79e2f8",
+			"configuration": {
+				"host": "thana-datamart-redshift-cluster-nonprod.cjpkxkrpn6ge.ap-southeast-7.redshift.amazonaws.com",
+				"port": "5439",
+				"database": "thana_city_datamart",
+				"url": "jdbc:redshift://thana-datamart-redshift-cluster-nonprod.cjpkxkrpn6ge.ap-southeast-7.redshift.amazonaws.com:5439/thana_city_datamart",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": false,
+				"provider-properties": {
+					"@dbeaver-show-non-default-db@": "true",
+					"@dbeaver-chosen-role@": "",
+					"@dbeaver-show-template-db@": "false",
+					"@dbeaver-show-unavailable-db@": "true",
+					"show-database-statistics": "false",
+					"@dbeaver-read-all-data-types-db@": "false",
+					"read-keys-with-columns": "false",
+					"replace-legacy-timezone": "false",
+					"postgresql.dd.plain.string": "false",
+					"postgresql.dd.tag.string": "false"
+				},
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"colorDark": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": true,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800,
+			"auto-close-connections": true,
+			"close-connections-period": 14400,
+			"security": {
+				"permission-restrictions": []
+			}
+		}
+	}
+}
