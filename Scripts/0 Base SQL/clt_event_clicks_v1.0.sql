@@ -14,10 +14,10 @@ WITH event_click AS (
 			ELSE 0
 			END AS is_parsed_element
 	FROM "trusted".clevertap_click
---	WHERE profile_identity IS NOT NULL
+	WHERE profile_identity IS NOT NULL
 --		AND event_datetime >= '2026-05-01'
 --		AND event_datetime < '2026-11-01'
-	WHERE profile_identity = '95733318'
+--	WHERE profile_identity = '95733318'
 )
 , event_parsed AS (
 	SELECT *
@@ -88,7 +88,7 @@ WITH event_click AS (
 		, b.article_title_th
 		, NVL(b.is_test_article, 0) AS is_test_article
 	FROM dim_content_items a
-	LEFT JOIN dim_article b ON a.action_value_id = b.article_id
+	FULL OUTER JOIN dim_article b ON a.action_value_id = b.article_id
 )
 , dim_rewards AS (
 	SELECT reward_id::VARCHAR AS reward_id
@@ -154,20 +154,24 @@ WITH event_click AS (
 	LEFT JOIN dim_reward_categories e ON a.element_key = e.category_id
 	LEFT JOIN map_tag t ON a.element_key = t.raw_tag AND a.app_sub_feature = 'reward_tags'
 )
-SELECT profile_identity
-	, event_datetime
-	, app_feature
-	, screen_name
-	, sub_feature
-	, element_name
-	, type
-	, display_name
-	, content
-	, provider
-	, link
-	, article_slug
-	, element_key
-	, target_member_types
-	, is_content_mapped
-	, is_test_content
-FROM final_data
+, visualize AS (
+	SELECT profile_identity
+		, event_datetime
+		, app_feature
+		, screen_name
+		, sub_feature
+		, element_name
+		, type
+		, display_name
+		, content
+		, provider
+		, link
+		, article_slug
+		, element_key
+		, target_member_types
+		, is_content_mapped
+		, is_test_content
+	FROM final_data
+)
+SELECT *
+FROM visualize
