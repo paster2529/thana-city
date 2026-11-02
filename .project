@@ -9,4 +9,21 @@
 	<natures>
 		<nature>org.jkiss.dbeaver.DBeaverNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>Scripts/05 Data Refresh/01 BU Monthly Turtle</name>
+			<type>2</type>
+			<location>//C:/Users/piriyas/Documents/GitHub/bssh/00 Active Projects/01 Thana City - Hook/05 Refresh Data/01 BU Monthly Turtle/</location>
+		</link>
+		<link>
+			<name>Scripts/05 Data Refresh/02 BU Monthly Das Haus</name>
+			<type>2</type>
+			<location>//C:/Users/piriyas/Documents/GitHub/bssh/00 Active Projects/01 Thana City - Hook/05 Refresh Data/02 BU Monthly Das Haus/</location>
+		</link>
+		<link>
+			<name>Scripts/05 Data Refresh/04 Campaign Summary</name>
+			<type>2</type>
+			<location>//C:/Users/piriyas/Documents/GitHub/bssh/00 Active Projects/01 Thana City - Hook/05 Refresh Data/04 Campaign Summary/</location>
+		</link>
+	</linkedResources>
 </projectDescription>
