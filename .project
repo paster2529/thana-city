@@ -11,19 +11,44 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>Scripts/05 Data Refresh/01 BU Monthly Turtle</name>
+			<name>Scripts/00 Base SQL</name>
 			<type>2</type>
-			<location>//C:/Users/piriyas/Documents/GitHub/bssh/00 Active Projects/01 Thana City - Hook/05 Refresh Data/01 BU Monthly Turtle/</location>
+			<location>//C:/Users/piriyas/Documents/GitHub/bssh/00 Active Projects/01 Thana City - Hook/00 Base SQL/</location>
 		</link>
 		<link>
-			<name>Scripts/05 Data Refresh/02 BU Monthly Das Haus</name>
+			<name>Scripts/02 Analysis</name>
 			<type>2</type>
-			<location>//C:/Users/piriyas/Documents/GitHub/bssh/00 Active Projects/01 Thana City - Hook/05 Refresh Data/02 BU Monthly Das Haus/</location>
+			<location>//C:/Users/piriyas/Documents/GitHub/bssh/00 Active Projects/01 Thana City - Hook/02 Analysis/</location>
 		</link>
 		<link>
-			<name>Scripts/05 Data Refresh/04 Campaign Summary</name>
+			<name>Scripts/03 Adhoc</name>
 			<type>2</type>
-			<location>//C:/Users/piriyas/Documents/GitHub/bssh/00 Active Projects/01 Thana City - Hook/05 Refresh Data/04 Campaign Summary/</location>
+			<location>//C:/Users/piriyas/Documents/GitHub/bssh/00 Active Projects/01 Thana City - Hook/03 Adhoc/</location>
+		</link>
+		<link>
+			<name>Scripts/04 BU</name>
+			<type>2</type>
+			<location>//C:/Users/piriyas/Documents/GitHub/bssh/00 Active Projects/01 Thana City - Hook/04 BU/</location>
+		</link>
+		<link>
+			<name>Scripts/05 Data Refresh</name>
+			<type>2</type>
+			<location>//C:/Users/piriyas/Documents/GitHub/bssh/00 Active Projects/01 Thana City - Hook/05 Data Refresh/</location>
+		</link>
+		<link>
+			<name>Scripts/06 Campaign Performance</name>
+			<type>2</type>
+			<location>//C:/Users/piriyas/Documents/GitHub/bssh/00 Active Projects/01 Thana City - Hook/06 Campaign Performance/</location>
+		</link>
+		<link>
+			<name>Scripts/07 Customer Data Platform</name>
+			<type>2</type>
+			<location>//C:/Users/piriyas/Documents/GitHub/bssh/00 Active Projects/01 Thana City - Hook/07 Customer Data Platform/</location>
+		</link>
+		<link>
+			<name>Scripts/09 Data Validation</name>
+			<type>2</type>
+			<location>//C:/Users/piriyas/Documents/GitHub/bssh/00 Active Projects/01 Thana City - Hook/09 Data Validation/</location>
 		</link>
 	</linkedResources>
 </projectDescription>
