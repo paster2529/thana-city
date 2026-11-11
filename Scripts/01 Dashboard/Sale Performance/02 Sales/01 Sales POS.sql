@@ -8,6 +8,7 @@ WITH hook_members AS (
         , member_type
         , member_house_type
         , member_status
+        , referred_staff_id
         , is_staff
         , NVL(INITCAP(gender), 'Unknown') AS gender
         , is_foreigner AS is_thai
@@ -24,7 +25,7 @@ WITH hook_members AS (
         END AS age_range
     FROM refined.dim_hook_member
     --WHERE member_status = 'active'
-)
+) 
 , sales_turtle AS (
     SELECT data_date
         , transaction_datetime
@@ -63,6 +64,7 @@ WITH hook_members AS (
         , NULL::INT AS num_of_customer
     FROM refined.fact_sales_txn_turtle
     WHERE is_valid = TRUE
+    	AND LOWER(bu) <> 'bu test'
 )
 , sales_merchant_app AS (
     SELECT data_date
@@ -102,6 +104,7 @@ WITH hook_members AS (
         , NULL::INT AS num_of_customer
     FROM refined.fact_sales_txn_bss_merchant
     WHERE is_valid = TRUE
+    	AND LOWER(bu) <> 'bu test'
 )
 , sales_chefman AS (
     SELECT data_date
@@ -145,6 +148,7 @@ WITH hook_members AS (
         , numofcustomer AS num_of_customer
     FROM refined.fact_sales_txn_chefman
     WHERE is_valid = TRUE
+    	AND LOWER(bu) <> 'bu test'
 )
 , sales_union AS (
     SELECT * FROM sales_turtle
@@ -154,18 +158,53 @@ WITH hook_members AS (
     SELECT * FROM sales_chefman
 )
 , joined_member AS (
-    SELECT a.*
+    SELECT a.data_date
+		, a.transaction_datetime
+		, a.bu
+		, a.merchant
+		, a.transaction_id
+		, a.transaction_type
+		, a.is_valid
+		, NVL(a.member_id, b.member_id) AS member_id
+		, a.total_gross_amount
+		, a.total_discount_item_amount
+		, a.total_discount_txn_amount
+		, a.total_discount_amount
+		, a.total_net_include_tax_amount
+		, a.paid_amount
+		, a.paid_cash_amount
+		, a.paid_qr_amount
+		, a.paid_card_amount
+		, a.paid_coin_amount
+		, a.paid_coupon_amount
+		, a.paid_linepay_amount
+		, a.paid_wechat_amount
+		, a.paid_alipay_amount
+		, a.paid_rabbitcard_amount
+		, a.paid_others_amount
+		, a.paid_coin
+		, a.paid_coin_cash
+		, a.paid_coin_incentive
+		, a.coin_payment_portion
+		, a.items_count
+		, a.items_discount_items_count
+		, a.payments_count
+		, a.is_delivery
+		, a.is_cod
+		, a.table_type
+		, a.num_of_customer
         , b.register_date
         , b.registration_source
         , b.member_type
         , b.member_house_type
         , b.member_status
+        , b.referred_staff_id
         , NVL(b.is_staff, FALSE) AS is_staff
         , b.gender
         , b.is_thai
         , b.age_range
     FROM sales_union a
-    LEFT JOIN hook_members b ON a.member_id = b.member_id
+    FULL OUTER JOIN hook_members b ON a.member_id = b.member_id
 )
 SELECT data_date AS "data date"
     , LAST_DAY(data_date) AS "data month"
@@ -208,9 +247,9 @@ SELECT data_date AS "data date"
     , member_type AS "member type"
     , member_house_type AS "member house type"
     , member_status AS "member status"
+    , referred_staff_id AS "referred staff id"
     , is_staff AS "is staff"
     , gender AS "gender"
     , is_thai AS "is thai"
     , age_range AS "age range"
 FROM joined_member
-WHERE LOWER(bu) <> 'bu test'

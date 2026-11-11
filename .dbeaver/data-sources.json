@@ -6,7 +6,6 @@
 			"driver": "mysql8",
 			"name": "thana_city",
 			"save-password": true,
-			"virtual-model-id": "mysql8-1a185821750-6a9ca9d6d56070c4",
 			"configuration": {
 				"host": "db-mysql-thana-city-ro.hook-app.com",
 				"port": "3306",
@@ -26,7 +25,6 @@
 			"driver": "postgres-redshift-jdbc",
 			"name": "thana_city_datamart",
 			"save-password": true,
-			"virtual-model-id": "postgres-redshift-jdbc-1a185820c48-30dce0cfbe6947b3",
 			"configuration": {
 				"host": "thana-datamart-redshift-cluster-prod.cgqhw7byrmdr.ap-southeast-7.redshift.amazonaws.com",
 				"port": "5439",
@@ -56,7 +54,6 @@
 			"driver": "postgres-redshift-jdbc",
 			"name": "thana_city_datamart_nonprod",
 			"save-password": true,
-			"virtual-model-id": "postgres-redshift-jdbc-1a185821eeb-65ef0a400c79e2f8",
 			"configuration": {
 				"host": "thana-datamart-redshift-cluster-nonprod.cjpkxkrpn6ge.ap-southeast-7.redshift.amazonaws.com",
 				"port": "5439",

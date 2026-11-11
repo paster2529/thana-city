@@ -15,6 +15,7 @@ WITH hook_members AS (
         , DATEADD('day', -1, DATEADD('month', 1, date_trunc('month', activated_wallet_datetime)))::DATE AS activated_wallet_month
         , registration_source
         , is_staff
+        , referred_staff_id
         , is_foreigner
         , nationality
         , gender
@@ -57,6 +58,7 @@ WITH hook_members AS (
         , b.activated_wallet_datetime
         , b.activated_wallet_month
         , b.is_staff
+        , b.referred_staff_id
         , b.is_foreigner
         , b.nationality
         , b.gender
@@ -80,6 +82,7 @@ SELECT member_id AS "Member ID (daily)"
     , member_house_type AS "Member House Type (daily)"
     , member_house_zone AS "Member House Zone (daily)"
     , is_staff AS "Is Staff (daily)"
+    , referred_staff_id AS "Referred Staff ID (daily)"
     , is_foreigner AS "Is Foreigner (daily)"
     , gender AS "Gender (daily)"
     , data_date AS "Data Date (daily)"
